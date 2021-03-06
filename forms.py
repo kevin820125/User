@@ -8,7 +8,7 @@ class UserForm(FlaskForm):
     first_name = StringField('First name' ,validators = [InputRequired(), Length(max = 30)])
     last_name = StringField('Last name' ,validators = [InputRequired(), Length(max = 30)])
     password = PasswordField('Password' ,validators = [InputRequired()])
-    email = StringField('Email' , validators=[InputRequired(),Email(), Length(max=50)])
+    email = StringField('Email' , validators=[InputRequired(), Length(max=50)])
 
 
 
