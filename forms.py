@@ -1,6 +1,6 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField
-from wtforms.validators import InputRequired , Email , Length
+from wtforms.validators import InputRequired, Length, NumberRange, Email, Optional
 
 
 class UserForm(FlaskForm):
@@ -8,7 +8,7 @@ class UserForm(FlaskForm):
     first_name = StringField('First name' ,validators = [InputRequired(), Length(max = 30)])
     last_name = StringField('Last name' ,validators = [InputRequired(), Length(max = 30)])
     password = PasswordField('Password' ,validators = [InputRequired()])
-    email = StringField('Email' , validators=[InputRequired(),Email(message='someone use it or twrong typed!') , Length(max = 50)])
+    email = StringField('Email' , validators=[InputRequired(),Email(), Length(max=50)])
 
 
 
